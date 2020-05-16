@@ -11,7 +11,7 @@
 ### 运行：
 
 ```
-docker run -itd -p 5299:5299 --name baidu -v /opt/BDdownload:/root/Downloads baiyuetribe/baiduyunpan
+docker run -itd -p 5299:5299 --name baidu -v /opt/BDdownload:/root/Downloads lizhou1021/baiduyunpan
 ```
 
 说明：
