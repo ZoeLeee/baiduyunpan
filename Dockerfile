@@ -6,7 +6,7 @@ LABEL MAINTAINER="Azure <https://baiyue.one>"
 #百度云盘Docker版，适用系统：CentOS 7、Unbutu、Debian、Fedora、Raspberry Pi等linux系统，
 #也适用于windos、mac等系统
 ENV GLIBC_VERSION=2.29-r0
-ENV SOURCE=https://github.com/liuzhuoling2011/baidupcs-web/releases/download/3.6.7/BaiduPCS-Go-3.6.7-linux-amd64.zip
+ENV SOURCE=https://github.com/iikira/BaiduPCS-Go/releases/download/v3.6.2/BaiduPCS-Go-v3.6.2-linux-arm64.zip
 RUN apk update \
 	&& apk --no-cache add ca-certificates wget libstdc++ tzdata \
 	&& cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
@@ -16,8 +16,8 @@ RUN apk update \
     && apk --no-cache add glibc-2.29-r0.apk \ 
     && mkdir -p /BaiduPCS \ 
 	&& wget -q ${SOURCE} \
-	&& unzip BaiduPCS-Go-3.6.7-linux-amd64.zip && mv /BaiduPCS-Go-3.6.7-linux-amd64/BaiduPCS-Go /BaiduPCS \ 
-	&& rm -rf BaiduPCS-Go-3.6.7-linux-amd64 BaiduPCS-Go-3.6.7-linux-amd64.zip \  
+	&& unzip BaiduPCS-Go-v3.6.2-linux-arm64.zip && mv /BaiduPCS-Go-v3.6.2-linux-arm64/BaiduPCS-Go /BaiduPCS \ 
+	&& rm -rf BaiduPCS-Go-v3.6.2-linux-arm64 BaiduPCS-Go-v3.6.2-linux-arm64.zip \  
     && chmod a+x /BaiduPCS/BaiduPCS-Go \       
 	&& apk del wget tzdata \
 	&& rm -rf /glibc-${GLIBC_VERSION}.apk 
